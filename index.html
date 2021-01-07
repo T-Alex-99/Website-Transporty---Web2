@@ -1,0 +1,422 @@
+    <!DOCTYPE html>
+    <html lang="de">
+    <head>
+        <meta charset="utf-8">
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        
+
+        <title>Transporty</title>
+    
+    </head>
+    
+<body>
+    
+    <header id="header">  
+        <nav class="navbar navbar-expand-md fixed-top bg-light navbar-light">
+            <!--Logo-->
+            <a class="navbar-brand" href="index.html">
+                <img src="Bilder/logo.jpg" alt="" width="60">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#anfrage">Anfrage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vorteile">Vorteile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ueber_uns">Über uns </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#referenzen">Referenzen </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+    </header>
+    
+    <main>        
+        <br>
+        <br>
+        <section id="anfrage" class="blueRow">
+            <div class="row align-items-center">
+                <div class=" col-md-4 col-lg float-right">
+                    <img class="img-fluid m-auto d-block" src="Bilder/Titelbild.jpg" alt="">
+                </div>
+                <div class="container mt-5 mb-3 ml-0 mr-3 border col-md-6 rounded p-2 whiteForm" id="customerRequestForm"> 
+                    <h3>
+                        Angebotsanfrage
+                    </h3>
+                    <HR></HR>
+                    <form>
+                        <table class="ml-3">
+                            <tr>
+                                <td>Vorname:</td>
+                                <td colspan="2">
+                                    <input type="text" name="fName">
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nachname:</td>
+                                <td colspan="2">
+                                    
+                                    <input type="text" name="lName">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-Mail:
+                                </td>
+                                <td colspan="2"> 
+                                    <input type="email" name="mail">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Telefon</td>
+                                <td>
+                                    <input type="tel" name="phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Umzugsdatum:
+                                </td>
+                                <td colspan="2">
+                                    <input type="date" name="date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    PLZ:
+                                </td>
+                                <td colspan="2">
+                                    <input type="number" name="plz">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Adresse:
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="adress">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Entfernung
+                                </td>
+                                <td colspan="2">
+                                    <input type="number" name="distance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">
+                                    Packungen
+                                </td>
+                                <td>
+                                
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" name="sPack">
+                                </td>
+                                <td>
+                                    <!--Hier Bei Titel Noch die Maße für die jeweiligen Pakete Nachtragen-->
+                                    <span title="bis 30cm X 50cm">S-Größe</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" name="mPack">
+                                </td>
+                                <td>
+                                    <span title="bis 1m x 1,5m">M-Größe</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="number" name="lPack">
+                                </td>
+                                <td>
+                                    <span title="Bis 2m x 3m">L-Größe</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">
+                                    Schwertransport?
+                                </td>
+                            </tr>
+                            <tr>
+                                <!--Achtung inline CSS-Einlage. Bei Bedarf noch auslagern-->
+                                <td style="text-align:right">
+                                    <input type="radio" name="heavyLoad" id="yes" value="yes">
+                                </td>
+                                <td style="text-align:left">
+                                    <label for="yes">Ja</label>
+                                </td>
+                            </tr>       
+                            <tr>
+                                <td style="text-align:right">
+                                    <input type="radio" name="heavyLoad" id="no" value="no">
+                                </td>
+                                <td style="text-align:left">
+                                    <label for="no">Nein</label>
+                                </td>
+                            </tr>                        
+                        </table>
+                        <hr>
+                        <input type="button" value="Berechnen" name="calc">
+                    </form>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="vorteile">
+            <div class="">
+                <h2 class="text-center my-3">Vorteile</h2>
+                <div class="row mt-2">
+                    <div class="col-md text-center my-2">
+
+                            <div class="mb-2" >
+                                <img src="Bilder/pro1.png" width="150px" alt="pic">
+                            </div>
+
+                            <p><b>Effiziente Lagerung</b></p>
+                        <p></p>
+                    </div>
+                    <div class="col-md text-center my-2"">
+
+                            <div class="mb-2">
+                                <img src="Bilder/pro2.png" width="150px" alt="pic">
+                            </div>
+                            <p><b>Bester Preis</b></p>
+                            <p></p>
+                        
+                    </div>
+
+                    <div class="col-md text-center my-2"">
+
+                            <div class="mb-2" >
+                                <img src="Bilder/pro3.png" width="150px" alt="pic">
+                            </div>
+                        <p><b>Schneller Transport</b></p>
+                            <p></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    <section id="ueber_uns" class="blueRow">        
+        <div class="">
+            <h2 class="text-center my-3 ">Über uns</h2>
+            
+            <div class="row">
+                <div class="col-md-3 ml-3">
+                    <img class="img-fluid" src="Bilder/ueber_uns.png" alt="logo" height="200" width="auto">
+                </div>
+                <div class="col-md">
+                    <p class="col-md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <!--Hier eventuell bessere Lösung in der Anordung finden-->
+            <div class="row mt-3">
+                <div class="col-md">
+                    <p class="col-md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="col-md-3 mb-3 mr-3">
+                    <img class="img-fluid" src="Bilder/ueber_uns2.png" alt="logo" height="200" width="auto">
+                </div>
+            </div>
+        </div>
+
+    </section>  
+    
+    <section id="referenzen">    
+        <div class="">
+            <h2 class="text-center  my-3">Referenzen</h2>
+            <!--Slides müssen noch zentriert werden.
+            Eventuell andere Lösung finden um mehr anzuzeigen-->
+            <div id="references" class="carousel slide text-center" data-ride="carousel">
+                <!--Slides des carousels-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref1.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref2.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref3.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref4.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref5.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref6.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref7.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref8.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="text-center my-3 col-sm-4">
+                                <img class="mb-2" src="Bilder/ref9.jpg" width="200px" alt="">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Steuerung-->
+                <a class="carousel-control-prev" href="#references" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#references" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div> 
+        </div>
+    </section>
+            
+    <section id="kontakt" class="py-3 blueRow">
+        <div class=""> 
+            <h2 class="text-center my-3">Kontakt</h2>
+            <div class="row border rounded p-2 my-3 mx-3 whiteForm" id="contactFormular">
+                <form class="col-md">
+                    <table>
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                 <input type="text" placeholder="Vorname" size="33">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nachname
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Nachname" size="33">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                E-Mail
+                            </td>
+                            <td>
+                                <input type="email" placeholder="E-Mail" size="33">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Betreff
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Betreff" size="33">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nachricht
+                            </td>
+                            <td>
+                                <textarea cols="33" rows="7" placeholder="Nachricht" > </textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="checkbox" > Ich akzeptiere die AGBs
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="abschicken">
+                            </td>
+                        </tr>  
+                    </table>
+                </form>
+                <div class=" col-md">
+                    <img class="img-fluid" src="Bilder/kontakt.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>        
+        
+    <footer>
+        <div class="text-center">
+                <img src="Bilder/logo.jpg" alt="logo" height="100">
+                <a href="agb.html">AGB</a>
+                <a href="impressum.html">Impressum</a>
+        </div>
+    </footer>  
+</body>
+</html>
