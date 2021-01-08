@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Latest compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+			section {
+				padding-top: 2cm;
+			}
+
+			* {
+				font-family: "Architects Daughter", cursive;
+			}
+			body {
+				background-color: white;
+			}
+
+			#loginForm {
+				position: absolute;
+				left: 30%;
+				top: 40%;
+				background-color: whitesmoke;
+				color: black;
+				border-radius: 10px;
+				border: black;
+			}
+
+			.navbar-nav.navbar-center {
+				position: absolute;
+				left: 50%;
+				transform: translatex(-50%);
+			}
+
+			.blueRow {
+				background-color: lightblue;
+				color: grey;
+			}
+
+			.whiteForm {
+				background-color: whitesmoke;
+				color: black;
+				border: black;
+			}
+
+			footer {
+				background-color: darkgray;
+				color: whitesmoke;
+			}
+		</style>
+
+		<title>Kundenanfrage</title>
+	</head>
+	<body class="blueRow">
+		<h1 class="mt-5">Kundenanfrage Max Mustermann</h1>
+		<table class="table table-bordered mt-5 whiteForm" id="customerTable">
+			<tr>
+				<td></td>
+				<th>Details</th>
+			</tr>
+			<tr>
+				<th>Vorname:</th>
+				<td><%= row.Vorname %></td>
+			</tr>
+			<tr>
+				<th>Nachname:</th>
+				<td><%= row.Nachname %></td>
+			</tr>
+			<tr>
+				<th>E-Mail:</th>
+				<td><%= row.Email %></td>
+			</tr>
+			<tr>
+				<th>Telefon:</th>
+				<td><%= row.Telefonnummer %></td>
+			</tr>
+			<tr>
+				<th>Umzugsdatum:</th>
+				<td><%= row.Umzugsdatum %></td>
+			</tr>
+			<tr>
+				<th>Entfernung:</th>
+				<td><%= row.Entfernung %></td>
+			</tr>
+			<tr>
+				<th>S-Kisten:</th>
+				<td><%= row.S %></td>
+			</tr>
+			<tr>
+				<th>M-Kisten:</th>
+				<td><%= row.M %></td>
+			</tr>
+			<tr>
+				<th>L-Kisten:</th>
+				<td><%= row.L %></td>
+			</tr>
+			<tr>
+				<th>Schwertransport:</th>
+				<td><%= row.Schwertransport %></td>
+			</tr>
+		</table>
+		<a href="/bearbeiten/<%= row.PersonId %>" class="btn btn-warning"
+			>Bearbeiten</a
+		>
+		<a href="/backoffice" class="btn btn-primary">Zurück</a>
+	</body>
+</html>
