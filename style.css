@@ -19,7 +19,7 @@ body {
 
 .navbar-nav.navbar-center {
     position: absolute;
-    left: 50%;
+    left: 20%;
     transform: translatex(-50%);
 }
 
