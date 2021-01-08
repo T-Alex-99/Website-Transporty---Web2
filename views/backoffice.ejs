@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Latest compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+
+		<link rel="stylesheet" href="style.css" />
+
+		<title>Admin Übersicht</title>
+	</head>
+	<body class="blueRow">
+		<h1 class="mt-5">Admin Dashboard</h1>
+		<table class="table table-bordered mt-5 whiteForm" id="dataTable">
+			<tr>
+				<th>Name</th>
+				<th>PLZ</th>
+				<th>Entfernung</th>
+				<th>Telefon</th>
+				<th>Datum</th>
+				<th>Packungen</th>
+				<th>Schwertransport</th>
+				<th>Bearbeiten</th>
+			</tr>
+			<% rows.forEach(function(row){ %>
+			<tr>
+				<th><%= row.Vorname %> <%= row.Nachname %></th>
+				<th><%= row.PLZ %></th>
+				<th><%= row.Entfernung %></th>
+				<th><%= row.Telefonnummer %></th>
+				<th><%= row.Umzugsdatum %></th>
+				<th>S- <%= row.S %> M- <%= row.M %> L- <%= row.L %></th>
+				<th><%= row.Schwertransport %></th>
+				<th>
+					<form action="">
+						<a href="/Kundenansicht/<%= row.ID %>" class="btn btn-primary"
+							>Anschauen</a
+						>
+						<a href="/bearbeiten/<%= row.ID %>" class="btn btn-warning"
+							>Bearbeiten</a
+						>
+						<a href="/delete/<%= row.ID %>" class="btn btn-danger">Löschen</a>
+					</form>
+				</th>
+			</tr>
+			<% }) %>
+		</table>
+		<a href="/adminLogin" class="btn btn-dark">Ausloggen</a>
+	</body>
+</html>

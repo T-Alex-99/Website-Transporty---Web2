@@ -9,21 +9,23 @@
             <!-- Popper JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
             <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <!--rein für den questioncircle-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        
+
         <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-        
+
 
         <title>Transporty</title>
-    
+
     </head>
-    
+
 <body>
-    
-    <header id="header">  
+
+    <header id="header">
         <nav class="navbar navbar-expand-md fixed-top bg-light navbar-light">
             <!--Logo-->
             <a class="navbar-brand" href="index.html">
@@ -53,50 +55,57 @@
                     </li>
                 </ul>
             </div>
-        </nav>    
+        </nav>
     </header>
-    
-    <main>        
-        <br>
-        <br>
+
+    <main>
         <section id="anfrage" class="blueRow">
             <div class="row align-items-center">
                 <div class=" col-md-4 col-lg float-right">
                     <img class="img-fluid m-auto d-block" src="Bilder/Titelbild.jpg" alt="">
                 </div>
-                <div class="container mt-5 mb-3 ml-0 mr-3 border col-md-6 rounded p-2 whiteForm" id="customerRequestForm"> 
+                <div class="container mt-5 mb-3 ml-0 mr-3 border col-md-6 rounded p-2 whiteForm" id="customerRequestForm">
                     <h3>
                         Angebotsanfrage
                     </h3>
                     <HR></HR>
-                    <form>
+                    <form action="/dataSubmit" method="post">
                         <table class="ml-3">
+                            <tr>
+                                <td>Anrede</td>
+                                <td colspan="2">
+                                    <select name="anrede" id="cars">
+                                    <option value="Herr">Herr</option>
+                                    <option value="Hrau">Hrau</option>
+                                    </select>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>Vorname:</td>
                                 <td colspan="2">
-                                    <input type="text" name="fName">
-                                    
+                                    <input type="text" name="fName" required>
+
                                 </td>
                             </tr>
                             <tr>
                                 <td>Nachname:</td>
                                 <td colspan="2">
-                                    
-                                    <input type="text" name="lName">
+
+                                    <input type="text" name="lName" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     E-Mail:
                                 </td>
-                                <td colspan="2"> 
-                                    <input type="email" name="mail">
+                                <td colspan="2">
+                                    <input type="email" name="email" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Telefon</td>
                                 <td>
-                                    <input type="tel" name="phone">
+                                    <input type="tel" name="phone" required>
                                 </td>
                             </tr>
                             <tr>
@@ -104,7 +113,15 @@
                                     Umzugsdatum:
                                 </td>
                                 <td colspan="2">
-                                    <input type="date" name="date">
+                                    <input type="date" name="date" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Straße/Hausnummer:
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="address" required>
                                 </td>
                             </tr>
                             <tr>
@@ -112,23 +129,25 @@
                                     PLZ:
                                 </td>
                                 <td colspan="2">
-                                    <input type="number" name="plz">
+                                    <input type="text" name="plz" required>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Adresse:
+                                    Ort:
                                 </td>
                                 <td colspan="2">
-                                    <input type="text" name="adress">
+                                    <input type="text" name="ort" required>
                                 </td>
                             </tr>
+
+
                             <tr>
                                 <td>
-                                    Entfernung
+                                    Entfernung in km
                                 </td>
                                 <td colspan="2">
-                                    <input type="number" name="distance">
+                                    <input type="number" name="distance" required>
                                 </td>
                             </tr>
                             <tr>
@@ -136,32 +155,35 @@
                                     Packungen
                                 </td>
                                 <td>
-                                
+
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="number" name="sPack">
+                                    <input type="number" name="sPack" required>
                                 </td>
                                 <td>
                                     <!--Hier Bei Titel Noch die Maße für die jeweiligen Pakete Nachtragen-->
-                                    <span title="bis 30cm X 50cm">S-Größe</span>
+                                    S-Größe<a href="#" title="bis 30cm X 50cm" > <i class="fa fa-question-circle"></i></a>
+                                    <span class="tooltiptext">Bitte hier die Beschriebung einfügen</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="number" name="mPack">
+                                    <input type="number" name="mPack" required>
                                 </td>
                                 <td>
-                                    <span title="bis 1m x 1,5m">M-Größe</span>
+                                    M-Größe<a href="#" title="bis 1m x 1,5m" > <i class="fa fa-question-circle"></i></a>
+                                    <span class="tooltiptext">Bitte hier die Beschriebung einfügen</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="number" name="lPack">
+                                    <input type="number" name="lPack" required>
                                 </td>
                                 <td>
-                                    <span title="Bis 2m x 3m">L-Größe</span>
+                                    L-Größe<a href="#" title="ab 1m x 1,5" > <i class="fa fa-question-circle"></i></a>
+                                    <span class="tooltiptext">Bitte hier die Beschriebung einfügen</span>
                                 </td>
                             </tr>
                             <tr>
@@ -172,29 +194,35 @@
                             <tr>
                                 <!--Achtung inline CSS-Einlage. Bei Bedarf noch auslagern-->
                                 <td style="text-align:right">
-                                    <input type="radio" name="heavyLoad" id="yes" value="yes">
+                                    <input type="radio" name="heavyLoad" id="yes" value="yes" required>
                                 </td>
                                 <td style="text-align:left">
                                     <label for="yes">Ja</label>
                                 </td>
-                            </tr>       
+                            </tr>
                             <tr>
                                 <td style="text-align:right">
-                                    <input type="radio" name="heavyLoad" id="no" value="no">
+                                    <input type="radio" name="heavyLoad" id="no" value="no" checked="checked" required>
                                 </td>
                                 <td style="text-align:left">
                                     <label for="no">Nein</label>
                                 </td>
-                            </tr>                        
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox" > Ich akzeptiere die AGBs
+                                </td>
+                            </tr>
                         </table>
                         <hr>
-                        <input type="button" value="Berechnen" name="calc">
+                        <input type="submit" value="Berechnen" name="calc">
                     </form>
 
                 </div>
             </div>
         </section>
-        
+
         <section id="vorteile">
             <div class="">
                 <h2 class="text-center my-3">Vorteile</h2>
@@ -215,7 +243,7 @@
                             </div>
                             <p><b>Bester Preis</b></p>
                             <p></p>
-                        
+
                     </div>
 
                     <div class="col-md text-center my-2"">
@@ -225,28 +253,32 @@
                             </div>
                         <p><b>Schneller Transport</b></p>
                             <p></p>
-                        
+
                     </div>
                 </div>
             </div>
         </section>
-        
-    <section id="ueber_uns" class="blueRow">        
+
+   <section id="ueber_uns" class="blueRow">
         <div class="">
             <h2 class="text-center my-3 ">Über uns</h2>
-            
             <div class="row">
                 <div class="col-md-3 ml-3">
                     <img class="img-fluid" src="Bilder/ueber_uns.png" alt="logo" height="200" width="auto">
                 </div>
                 <div class="col-md">
-                    <p class="col-md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p class="col-md">Wir sind Transporty, ein kleines aber hochmotiviertes Unternehmen, das sich auf Umzüge spezialisiert hat. Unsere Leidenschaft sind tolle Schnäppchen und exzellenter Service. Deshalb ist es unser Anspruch, ihnen die bestmögliche Kombination aus beidem zu bieten. Ein Umzug ist immer mehr als nur ein Transport. Und ein Transport ist immer mehr als nur die Bewegung von Gütern.
+Für Sie und für uns! Sie vertrauen uns Ihr Hab und Gut an: die einzigen Fotos aus der Kindheit, den gerade erst bezahlten Flachbildschirm, das wertvolle Porzellan von Uroma, die unerlässlichen Akten Ihres Unternehmens. Wir begreifen und bewahren den Wert, der in Ihren Umzugskartons steckt und schätzen Ihr Vertrauen.
+
+</p>
                 </div>
             </div>
             <!--Hier eventuell bessere Lösung in der Anordung finden-->
             <div class="row mt-3">
                 <div class="col-md">
-                    <p class="col-md">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <p class="col-md">Dass wir dieses Vertrauen verdienen, beweisen wir als Umzugsunternehmen bereits seit 40 Jahren täglich durch Perfektion und Zuverlässigkeit: 
+										regional, überregional, national und auch international. Wir sind durch unsere Erfahrung zu absoluten Experten für private und geschäftliche Umzüge, Spedition sowie Umzugsmanagement und Transportlogistik geworden.
+										Ob ein Umzug innerhalb von Albstadt, in Süddeutschland oder ins Ausland, für uns gilt: Wir sehen nicht die Aufträge, wir sehen die Menschen dahinter. Unser jahrelanger Kundenkontakt zeigt uns: Jede Privatperson, jedes Unternehmen zeichnet sich durch unterschiedliche Wünsche, Bedürfnisse und Fragen aus. Transporty entwickelt stets die optimale Lösung für das eine individuelle Anliegen.</p>
                 </div>
                 <div class="col-md-3 mb-3 mr-3">
                     <img class="img-fluid" src="Bilder/ueber_uns2.png" alt="logo" height="200" width="auto">
@@ -254,34 +286,44 @@
             </div>
         </div>
 
-    </section>  
-    
-    <section id="referenzen">    
-        <div class="">
-            <h2 class="text-center  my-3">Referenzen</h2>
-            <!--Slides müssen noch zentriert werden.
-            Eventuell andere Lösung finden um mehr anzuzeigen-->
-            <div id="references" class="carousel slide text-center" data-ride="carousel">
+    </section>
+
+    <section id="referenzen">
+            <div id="references" class="carousel slide" data-ride="carousel">
+				<h3 class="text-center">Referenzen<h3>
                 <!--Slides des carousels-->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref1.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText" > <b>Frederik Glück
+
+								</b><br>
+                                    Sowohl unseren Privatumzug sowie den Umzug unserer Büroräume inkl. schwierigen Möbeleinbringungen mit einem 
+									Außenaufzug haben die Mitarbeiter mit bravour erledigt. Die Mitarbeiter waren äußerst professionell, hilfsbereit 
+									und absolut zuverlässig.
+									Das ist ein Team das wie versprochen schon seit Jahren zusammen arbeitet und das merkt man bei jedem Handgriff. 
+									Auch die Beratung von Herrn Brakmann im Vorfeld lies keine Fragen offen.
+									Alles was versprochen wurde, wurde auch gehalten teilweise sogar übertroffen !
+									Vielen lieben Dank und gerne bis zum nächsten Umzug.
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref2.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Ingrid Korn</b><br>
+                                    Sehr sympathisches und kompetentes Familienunternehmen. Auch die Mitarbeiter haben ein Top Job am Umzugstag vollbracht 
+									und sind alle wirklich total nett, hilfsbereit und menschlich. So etwas findet man heutzutage nicht mehr all zu oft. 
+									Würde wieder mit Transporty umziehen. Habe die Firma auch bereits weiterempfohlen an eine Freundin, die nächstes Jahr umzieht
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref3.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Johannes Richter</b><br>
+                                    Umzug von Kirchheim nach Ulm mit einer Zwischenlagerung von 4,5 Monaten wegen des Neubaus wurden zu vollster Zufriedenheit 
+									und mit höchster Professionalität erledigt. Es wurde alles fachgerecht verpackt und in einem vollausgestatteten Lagercontainer verstaut, 
+									den die Firma Transporty mittels modernstem Fuhrpark bis vor meine Haustüre gebracht hat!!!
+									Vielen Dank an die Männer von Transporty Ihr seid ein eingespieltes Team und das merkt man von der 1. Minute an.
                                 </p>
                             </div>
                         </div>
@@ -290,20 +332,29 @@
                         <div class="row">
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref4.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Regine Kau</b><br>
+                                    Die Mitarbeiter waren sehr fleißig, zuvorkommend und absolut professionell. Vielen Dank an Herrn Brakmann und das Team der
+									Firma Transporty. Das war bereits der 4. Umzug mit selbigen Team innerhalb von 8 Jahren und sicher auch nicht unser letzte. gerne jederzeit nur
+									zu empfehlen.
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref5.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Christinne Lauch</b><br>
+                                    Nicht umsonst gibt es Transporty seit vielen Jahren, ein Unternehmen, dass seinen Job versteht!! Die Abwicklung ist super reibungslos verlaufen 
+									und genau so sollte es auch sein, da der Umzug immer mit Stress und Anstrengung verbunden ist. Die Umzugshelfer/Möbelpacker waren TOP!
+									Freundlich, schnell, sauber und sind dabei auch noch sehr achtsam. auf die Möbel bzw. das Inventar. 
+									Dieses Unternehmen versteht Dienstleistung und sticht unter der Masse von Umzugsunternehmen positiv heraus.
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref6.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Petra Schwach</b><br>
+                                    Berufsbedingt musste ich in den letzten zehn Jahren bereits mehrfach umziehen. Auf Empfehlung meines Schwagers bin ich auf Transporty aufmerksam geworden und 
+									bin dieses Jahr zum 4. Mal mit Transporty umgezogen.
+									Die Mitarbeiter von Transporty sind absolut zuverlaessig, arbeiten schnell, vorsichtig und sauber. 
+									Zwei der Mitarbeiter sind bereits ebenso zum vierten Mal mit mir umgezogen:) und so war der Umzug trotz Umzug von DG 
+									ins DG relativ kurzweilig und anekdotenreich. Auch das spricht für die Firma.
                                 </p>
                             </div>
                         </div>
@@ -312,20 +363,26 @@
                         <div class="row">
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref7.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                               <p id="carouselText"> <b>Lisa Schleher</b><br>
+                                    Großes Lob an Alle. Gerne jederzeit wieder mit den Fachleuten der Fa. Transporty! Es ist ein Vorzeigeunternehmen !
+									So macht umziehen Spaß, liebe Grüße an das Team von Herrn Schäfer
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref8.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                                <p id="carouselText"> <b>Wolfgang Weber</b><br>
+                                    Hervorragende Betreuung unseres Umzugs nach S-Feuerbach durch Transporty-Umzüge. 
+									Angenehmer kann ein Umzug nicht erfolgen. Extrem freundliche Mitarbeiter. Super zuverlässiger und sorgsamer Umgang 
+									mit unserem Umzugsgut. Alles in Allem ein wunderbarer Tag- besser kann es nicht laufen! So macht Umziehen Spaß!
                                 </p>
                             </div>
                             <div class="text-center my-3 col-sm-4">
                                 <img class="mb-2" src="Bilder/ref9.jpg" width="200px" alt="">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet
+                               <p id="carouselText"> <b>Wilhelm Eckerth</b><br>
+                                    NOTE 1 + Absolute Profis am Werk. Besten Dank an Herrn Brakmann und sein Team. Es wurde alles fachgerecht verpackt und durch einen
+									Schreiner wurden alle nötigen De- und Montagen schnelle und professionell durchgeführt. Der Umzug wurde im geplanten Zeitraum zum 
+									vereinbarten Festpreis durchgeführt.
+									Das Unternehmen kann ich gerne weiterempfehlen
                                 </p>
                             </div>
                         </div>
@@ -339,15 +396,17 @@
                 <a class="carousel-control-next" href="#references" data-slide="next">
                     <span class="carousel-control-next-icon"></span>
                 </a>
-            </div> 
-        </div>
+            </div>
     </section>
-            
+
     <section id="kontakt" class="py-3 blueRow">
-        <div class=""> 
+        <div class="">
             <h2 class="text-center my-3">Kontakt</h2>
             <div class="row border rounded p-2 my-3 mx-3 whiteForm" id="contactFormular">
+
                 <form class="col-md">
+                    <p class="text-center">Falls Sie noch weitere Fragen, zu unseren Leistungen haben, können Sie uns gerne über folgendes Formular erreichen:</p>
+                <br>
                     <table>
                         <tr>
                             <td>
@@ -392,15 +451,9 @@
                         <tr>
                             <td></td>
                             <td>
-                                <input type="checkbox" > Ich akzeptiere die AGBs
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
                                 <input type="submit" value="abschicken">
                             </td>
-                        </tr>  
+                        </tr>
                     </table>
                 </form>
                 <div class=" col-md">
@@ -409,14 +462,14 @@
             </div>
         </div>
     </section>
-</main>        
-        
+</main>
+
     <footer>
         <div class="text-center">
                 <img src="Bilder/logo.jpg" alt="logo" height="100">
                 <a href="agb.html">AGB</a>
                 <a href="impressum.html">Impressum</a>
         </div>
-    </footer>  
+    </footer>
 </body>
 </html>

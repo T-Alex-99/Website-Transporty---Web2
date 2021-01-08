@@ -1,0 +1,53 @@
+section {
+	padding-top: 2cm;
+}
+
+* {
+	font-family: 'Arial', cursive;
+}
+body {
+	background-color: white;
+}
+
+#loginForm {
+	position: absolute;
+	left: 30%;
+	top: 40%;
+	background-color: whitesmoke;
+	color: black;
+	border-radius: 10px;
+	border: black;
+}
+
+#customerRequestForm{
+    overflow: auto;
+}
+
+.navbar-nav.navbar-center {
+	
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+.blueRow {
+	margin-top: 50px;
+	background-color: lightblue;
+	color: grey;
+}
+
+.whiteForm {
+	background-color: whitesmoke;
+	color: black;
+	border: black;
+}
+
+#carouselText {
+	height: 300px;
+	overflow: auto;
+}
+
+footer {
+	background-color: darkgray;
+	color: whitesmoke;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Latest compiled and minified CSS -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		/>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+
+		<!-- <link rel="stylesheet" href="style.css" /> -->
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+			section {
+				padding-top: 2cm;
+			}
+
+			* {
+				font-family: "Architects Daughter", cursive;
+			}
+			body {
+				background-color: white;
+			}
+
+			#loginForm {
+				position: absolute;
+				left: 30%;
+				top: 40%;
+				background-color: whitesmoke;
+				color: black;
+				border-radius: 10px;
+				border: black;
+			}
+
+			.navbar-nav.navbar-center {
+				position: absolute;
+				left: 50%;
+				transform: translatex(-50%);
+			}
+
+			.blueRow {
+				background-color: lightblue;
+				color: grey;
+			}
+
+			.whiteForm {
+				background-color: whitesmoke;
+				color: black;
+				border: black;
+			}
+
+			footer {
+				background-color: darkgray;
+				color: whitesmoke;
+			}
+		</style>
+
+		<title>Bearbeiten</title>
+	</head>
+	<body class="blueRow">
+		<h1 class="mt-5">Kundenanfrage Max Mustermann</h1>
+		<form action="/update" method="post">
+			<input type="hidden" value="<%= row.SPID %>" name="SPID" />
+			<input type="hidden" value="<%= row.MPID %>" name="MPID" />
+			<input type="hidden" value="<%= row.LPID %>" name="LPID" />
+			<input type="hidden" value="<%= row.UmzugID %>" name="UmzugID" />
+			<input type="hidden" value="<%= row.PersonId %>" name="PersonID" />
+			<input type="hidden" value="<%= row.Anrede %>" name="Anrede" />
+			<input type="hidden" value="<%= row.AdressID %>" name="AdressID" />
+			<input type="hidden" value="<%= row.SID %>" name="SID" />
+			<input type="hidden" value="<%= row.MID %>" name="MID" />
+			<input type="hidden" value="<%= row.LID %>" name="LID" />
+			<table class="table table-bordered mt-5 whiteForm" id="customerTable">
+				<tr>
+					<td></td>
+					<th>Details</th>
+				</tr>
+				<tr>
+					<th>Vorname:</th>
+					<td>
+						<input
+							type="text"
+							name="Vorname"
+							value="<%= row.Vorname %>"
+							required
+						/>
+					</td>
+				</tr>
+				<tr>
+					<th>Nachname:</th>
+					<td>
+						<input
+							type="text"
+							name="Nachname"
+							value="<%= row.Nachname %>"
+							required
+						/>
+					</td>
+				</tr>
+				<tr>
+					<th>E-Mail:</th>
+					<td>
+						<input
+							type="email"
+							name="Email"
+							value="<%= row.Email %>"
+							required
+						/>
+					</td>
+				</tr>
+				<tr>
+					<th>Telefon:</th>
+					<td>
+						<input
+							type="tel"
+							name="Telefonnummer"
+							id=""
+							value="<%= row.Telefonnummer %>"
+							required
+						/>
+					</td>
+				</tr>
+				<tr>
+					<th>Umzugsdatum:</th>
+					<td>
+						<input
+							type="date"
+							name="Umzugsdatum"
+							value="<%= row.Umzugsdatum %>"
+							required
+						/>
+					</td>
+				</tr>
+				<tr>
+					<th>Entfernung:</th>
+					<td>
+						<input
+							type="number"
+							name="Entfernung"
+							id=""
+							value="<%= row.Entfernung %>"
+							required
+						/>km
+					</td>
+				</tr>
+				<tr>
+					<th>S-Kisten:</th>
+					<td>
+						<input type="number" name="S" id="" value="<%= row.S %>" required />
+					</td>
+				</tr>
+				<tr>
+					<th>M-Kisten:</th>
+					<td>
+						<input type="number" name="M" id="" value="<%= row.M %>" required />
+					</td>
+				</tr>
+				<tr>
+					<th>L-Kisten:</th>
+					<td>
+						<input type="number" name="L" id="" value="<%= row.L %>" required />
+					</td>
+				</tr>
+				<tr>
+					<th>Schwertransport:</th>
+					<td>
+						<input
+							type="radio"
+							name="Schwertransport"
+							id="no"
+							checked="<%= row.Schwertransport %>"
+							required
+						/>
+						<label for="no">Nein</label>
+						<br />
+						<input
+							type="radio"
+							name="Schwertransport"
+							id="yes"
+							checked="<%= row.Schwertransport %>"
+							required
+						/>
+						<label for="yes">Ja</label>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Speichern" class="btn btn-warning" />
+			<a href="/backoffice" class="btn btn-primary">Zurück</a>
+		</form>
+	</body>
+</html>
