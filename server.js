@@ -41,7 +41,7 @@ app.get("/adminLogin", function (req, res) {
 	res.sendFile(__dirname + "/" + "adminLogin.html");
 });
 
-// Erstellen von default Creds für Admin user falls keier vorhanden
+// Erstellen von default Creds fï¿½r Admin user falls keier vorhanden
 app.post("/adminLogin", function (req, res) {
 	var email = req.body.adminMail;
 	var pass = req.body.adminPassword;
@@ -60,9 +60,6 @@ app.post("/adminLogin", function (req, res) {
 		});
 });
 
-app.get("/", function (req, res) {
-	res.sendFile(__dirname + "/" + "index.html");
-});
 
 // Index Form erstellund und speicherung
 app.post("/dataSubmit", function (req, res) {
@@ -145,10 +142,18 @@ app.post("/dataSubmit", function (req, res) {
 		});
 });
 
+// Verlinkungen 
+app.get("/", function (req, res) {
+	res.sendFile(__dirname + "/" + "index.html");
+});
+
 app.get("/agb", function (req, res) {
 	res.sendFile(__dirname + "/" + "agb.html");
 });
 
+app.get("/impressum", function (req, res) {
+	res.sendFile(__dirname + "/" + "impressum.html");
+});
 // Admin backend Daten anzeigen
 app.get("/backoffice", function (req, res) {
 	umzug_packungen.getAll().then((rows) => {
@@ -156,7 +161,7 @@ app.get("/backoffice", function (req, res) {
 	});
 });
 
-// Daten für update 
+// Daten fï¿½r update 
 app.get("/bearbeiten/:id", function (req, res) {
 	umzug_packungen.getById(req.params.id).then((rows) => {
 		const row = {
@@ -248,11 +253,7 @@ app.post("/update", function (req, res) {
 		});
 });
 
-app.get("/impressum", function (req, res) {
-	res.sendFile(__dirname + "/" + "impressum.html");
-});
-
-// Daten für view page
+// Daten fï¿½r view page
 app.get("/Kundenansicht/:id", function (req, res) {
 	umzug_packungen.getById(req.params.id).then((rows) => {
 		const row = {
