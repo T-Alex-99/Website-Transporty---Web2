@@ -10,17 +10,17 @@ class Umzug_packung {
 	UmzugID INTEGER NOT NULL,
 	PackungenID INTEGER NOT NULL,
 	Menge INTEGER NOT NULL,
-    PersonId INTEGER NOT NULL,
+    PersonID INTEGER NOT NULL,
 	CONSTRAINT fk_UP1 FOREIGN KEY (UmzugID) REFERENCES Umzug(ID),
-    CONSTRAINT fk_UP3 FOREIGN KEY (PersonId) REFERENCES Person(ID),
-	CONSTRAINT fk_UP2 FOREIGN KEY (PackungenID) REFERENCES Packungen(ID))`;
+    CONSTRAINT fk_UP2 FOREIGN KEY (PackungenID) REFERENCES Packungen(ID),
+    CONSTRAINT fk_UP3 FOREIGN KEY (PersonID) REFERENCES Person(ID))`;
 
 		return this.dao.run(sql);
 	}
 
 	create(umzugid, packungid, menge, personId) {
 		return this.dao.run(
-			"INSERT INTO umzug_packung (umzugid, packungenid, menge, personId) VALUES (?,?,?,?)",
+			"INSERT INTO umzug_packung (umzugid, packungenid, menge, personid) VALUES (?,?,?,?)",
 			[umzugid, packungid, menge, personId]
 		);
 	}
