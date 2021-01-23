@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var http = require("http");
+var popup = require("alert");
 
 // Importieren von externen Klassen
 const AppDAO = require("./dao");
@@ -11,6 +12,7 @@ const AdresseClass = require("./adresse");
 const UmzugClass = require("./umzug");
 const PackungenClass = require("./packungen");
 const Umzug_PackungenClass = require("./umzug_packung");
+const KontaktClass = require("./kontakt");
 
 // Verbindung zu DB und APP DAO
 const dao = new AppDAO("./database.db");
@@ -20,6 +22,7 @@ const address = new AdresseClass(dao);
 const umzug = new UmzugClass(dao);
 const packungen = new PackungenClass(dao);
 const umzug_packungen = new Umzug_PackungenClass(dao);
+const kontakt = new KontaktClass(dao);
 
 // Wenn Datenbank leer ist, erstelle neue
 admin.createTable();
@@ -28,6 +31,8 @@ address.createTable();
 umzug.createTable();
 packungen.createTable();
 umzug_packungen.createTable();
+kontakt.createTable();
+
 
 // css bilder und andere Files zugÃ¤nglich machen
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,7 +46,7 @@ app.get("/adminLogin", function (req, res) {
 	res.sendFile(__dirname + "/" + "adminLogin.html");
 });
 
-// Erstellen von default Creds für Admin user falls keier vorhanden
+// Erstellen von default Creds fï¿½r Admin user falls keier vorhanden
 app.post("/adminLogin", function (req, res) {
 	var email = req.body.adminMail;
 	var pass = req.body.adminPassword;
@@ -57,16 +62,38 @@ app.post("/adminLogin", function (req, res) {
 		.catch((err) => {
 			admin.create("admintest@test.de", "test123.");
 			res.sendFile(__dirname + "/" + "adminLogin.html");
+			console.log("Admin User erstellt " + "Adminusername: admintest@test.de | Passwort: test123.");
 		});
 });
 
-app.get("/", function (req, res) {
-	res.sendFile(__dirname + "/" + "index.html");
-});
+// Testen der Email
+function emailIsValid (email) {
+	return /\S+@\S+\.\S+/.test(email)
+	console.log("klappt");
+  }
 
-// Index Form erstellund und speicherung
+// Index Form erstell und und speicherung
 app.post("/dataSubmit", function (req, res) {
 	var data = req.body;
+
+	//validieren der Daten bevor der ï¿½bergabe an die Form
+		//Verhindert ein falsches Format der Email
+		if (emailIsValid(data.email) == false){
+			popup("Falsches Format fÃ¼r eine E-Mail");
+			
+			console.log("Falsche Email");
+			res.sendFile(__dirname + "/" + "index.html");
+		}
+
+		//Verhindert ein Datum das weniger als 5 Tage in der Zukunft liegt
+		if(Date.parse(data.date)-Date.parse(new Date())<5)
+		{
+		   	popup("Datum muss mindestens 4 Tage in der Zukunft liegen");
+			console.log("Datum muss mindestens 4 Tage in der Zukunft liegen");
+			res.sendFile(__dirname + "/" + "index.html");
+
+		}
+
 	address
 		.create(data.address, data.plz, data.ort)
 		.then((address) => {
@@ -145,18 +172,33 @@ app.post("/dataSubmit", function (req, res) {
 		});
 });
 
+// Verlinkungen 
+app.get("/", function (req, res) {
+	res.sendFile(__dirname + "/" + "index.html");
+});
+
 app.get("/agb", function (req, res) {
 	res.sendFile(__dirname + "/" + "agb.html");
 });
 
+app.get("/impressum", function (req, res) {
+	res.sendFile(__dirname + "/" + "impressum.html");
+});
+
 // Admin backend Daten anzeigen
 app.get("/backoffice", function (req, res) {
+		umzug_packungen.getAll().then((rows) => {
+			res.render("backoffice", { rows: rows });
+		});
+});
+
+app.get("/dataSubmit", function (req, res) {
 	umzug_packungen.getAll().then((rows) => {
-		res.render("backoffice", { rows: rows });
+		res.render("dataSubmit", { rows: rows });
 	});
 });
 
-// Daten für update 
+// Daten fï¿½r update 
 app.get("/bearbeiten/:id", function (req, res) {
 	umzug_packungen.getById(req.params.id).then((rows) => {
 		const row = {
@@ -248,11 +290,7 @@ app.post("/update", function (req, res) {
 		});
 });
 
-app.get("/impressum", function (req, res) {
-	res.sendFile(__dirname + "/" + "impressum.html");
-});
-
-// Daten für view page
+// Daten fï¿½r view page
 app.get("/Kundenansicht/:id", function (req, res) {
 	umzug_packungen.getById(req.params.id).then((rows) => {
 		const row = {
@@ -293,6 +331,7 @@ app.get("/delete/:id", function (req, res) {
 		});
 	});
 });
+
 
 // server run
 var Server = server.listen(8081, function () {

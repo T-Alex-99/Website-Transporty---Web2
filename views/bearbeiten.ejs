@@ -16,56 +16,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 
-		<!-- <link rel="stylesheet" href="style.css" /> -->
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
-			section {
-				padding-top: 2cm;
-			}
-
-			* {
-				font-family: "Architects Daughter", cursive;
-			}
-			body {
-				background-color: white;
-			}
-
-			#loginForm {
-				position: absolute;
-				left: 30%;
-				top: 40%;
-				background-color: whitesmoke;
-				color: black;
-				border-radius: 10px;
-				border: black;
-			}
-
-			.navbar-nav.navbar-center {
-				position: absolute;
-				left: 50%;
-				transform: translatex(-50%);
-			}
-
-			.blueRow {
-				background-color: lightblue;
-				color: grey;
-			}
-
-			.whiteForm {
-				background-color: whitesmoke;
-				color: black;
-				border: black;
-			}
-
-			footer {
-				background-color: darkgray;
-				color: whitesmoke;
-			}
-		</style>
-
+		<link rel="stylesheet" href="../public/style.css"/>
+		
 		<title>Bearbeiten</title>
 	</head>
-	<body class="blueRow">
+	<body>
 		<h1 class="mt-5">Kundenanfrage Max Mustermann</h1>
 		<form action="/update" method="post">
 			<input type="hidden" value="<%= row.SPID %>" name="SPID" />
